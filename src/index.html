@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-container">
+      <div class="login-box">
+        <div class="logo">🔐</div>
+        <h2>Password Manager</h2>
+        <!-- First Time Setup -->
+        <div id="setup-form" style="display: none;">
+          <h3>Create Master Password</h3>
+          <div class="error-message" id="setup-error" style="display: none;"></div>
+          <div class="input-group">
+            <label for="new-master-password">New Master Password</label>
+            <div class="input-wrapper">
+              <input type="password" id="new-master-password" placeholder="Enter your master password">
+              <button class="toggle-password" data-target="new-master-password">
+                <span class="eye-icon">👁️</span>
+              </button>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="confirm-master-password">Confirm Master Password</label>
+            <div class="input-wrapper">
+              <input type="password" id="confirm-master-password" placeholder="Confirm your master password">
+              <button class="toggle-password" data-target="confirm-master-password">
+                <span class="eye-icon">👁️</span>
+              </button>
+            </div>
+          </div>
+          <div class="password-requirements">
+            <div class="requirements-title">Password Requirements</div>
+            <ul>
+              <li>At least 8 characters</li>
+              <li>One uppercase letter</li>
+              <li>One lowercase letter</li>
+              <li>One number</li>
+              <li>One special character</li>
+            </ul>
+          </div>
+          <button id="create-password-btn" class="primary-button">Create Password</button>
+        </div>
+        <!-- Login Form -->
+        <div id="login-form" style="display: none;">
+          <h3>Welcome Back</h3>
+          <div class="error-message" id="login-error" style="display: none;"></div>
+          <div class="input-group">
+            <label for="master-password">Master Password</label>
+            <div class="input-wrapper">
+              <input type="password" id="master-password" placeholder="Enter your master password">
+              <button class="toggle-password" data-target="master-password">
+                <span class="eye-icon">👁️</span>
+              </button>
+            </div>
+          </div>
+          <button id="login-btn" class="primary-button">Login</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="app" class="app-container" style="display: none;">
+      <nav class="navbar">
+        <div class="nav-content">
+          <div class="nav-logo">
+            <span class="logo">🔐</span>
+            <h1>Password Manager</h1>
+          </div>
+          <button id="theme-toggle" class="icon-button">🌙</button>
+        </div>
+      </nav>
+      
+      <div class="main-content">
+        <div class="grid-container">
+          <!-- Add Password Section -->
+          <div class="card">
+            <div class="card-header">
+              <h2>Add Password</h2>
+            </div>
+            <div class="card-body">
+              <div class="input-group">
+                <label for="service-input">Service</label>
+                <input type="text" id="service-input" placeholder="e.g., Google, Twitter">
+              </div>
+              <div class="input-group">
+                <label for="username-input">Username</label>
+                <input type="text" id="username-input" placeholder="Your username">
+              </div>
+              <div class="input-group">
+                <label for="password-input">Password</label>
+                <div class="input-wrapper">
+                  <input type="password" id="password-input" placeholder="Your password">
+                  <button class="toggle-password" data-target="password-input">
+                    <span class="eye-icon">👁️</span>
+                  </button>
+                  <button id="generate-password" class="icon-button" title="Generate Password">🎲</button>
+                </div>
+              </div>
+              
+              <!-- Password Generator -->
+              <div id="password-generator" class="password-generator" style="display: none;">
+                <div class="generator-header">
+                  <h3>Password Generator</h3>
+                </div>
+                <div class="generator-options">
+                  <div class="option">
+                    <label class="checkbox-label">
+                      <input type="checkbox" id="include-uppercase" checked>
+                      <span>Uppercase Letters</span>
+                    </label>
+                  </div>
+                  <div class="option">
+                    <label class="checkbox-label">
+                      <input type="checkbox" id="include-lowercase" checked>
+                      <span>Lowercase Letters</span>
+                    </label>
+                  </div>
+                  <div class="option">
+                    <label class="checkbox-label">
+                      <input type="checkbox" id="include-numbers" checked>
+                      <span>Numbers</span>
+                    </label>
+                  </div>
+                  <div class="option">
+                    <label class="checkbox-label">
+                      <input type="checkbox" id="include-symbols" checked>
+                      <span>Special Characters</span>
+                    </label>
+                  </div>
+                  <div class="option length-option">
+                    <label>Password Length
+                      <input type="number" id="password-length" value="16" min="8" max="64">
+                    </label>
+                  </div>
+                  <button id="generate" class="secondary-button">Generate Password</button>
+                </div>
+              </div>
+              
+              <button id="add-btn" class="primary-button">Save Password</button>
+            </div>
+          </div>
+
+          <!-- Passwords List Section -->
+          <div class="card">
+            <div class="card-header">
+              <h2>Your Passwords</h2>
+              <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search passwords...">
+                <span class="search-icon">🔍</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div id="passwords-list" class="passwords-list">
+                <!-- Password entries will be added here dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

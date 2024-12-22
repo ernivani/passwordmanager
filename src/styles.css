@@ -1,0 +1,367 @@
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--gray-100);
+  color: var(--gray-900);
+}
+
+/* Login Screen */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.logo {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Navigation */
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid var(--gray-200);
+  padding: 1rem;
+}
+
+.nav-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-logo .logo {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.nav-logo h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: var(--gray-900);
+}
+
+/* Main Content */
+.app-container {
+  min-height: 100vh;
+  background-color: var(--gray-100);
+}
+
+.main-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--gray-900);
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+/* Forms */
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  margin-bottom: 0.5rem;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--gray-900);
+  background-color: white;
+  transition: all 0.15s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Buttons */
+.primary-button {
+  width: 100%;
+  padding: 0.625rem 1.25rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.primary-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.secondary-button {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: var(--gray-700);
+  border: 1px solid var(--gray-300);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.secondary-button:hover {
+  background-color: var(--gray-50);
+  color: var(--gray-900);
+}
+
+.icon-button {
+  padding: 0.5rem;
+  background: none;
+  border: 1px solid var(--gray-200);
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.icon-button:hover {
+  background-color: var(--gray-50);
+}
+
+/* Password Generator */
+.password-generator {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--gray-50);
+  border-radius: 0.5rem;
+  border: 1px solid var(--gray-200);
+}
+
+.generator-header {
+  margin-bottom: 1rem;
+}
+
+.generator-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--gray-900);
+}
+
+.generator-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--gray-700);
+}
+
+.length-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.length-option input {
+  width: 4rem;
+  text-align: center;
+}
+
+/* Password List */
+.passwords-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.password-item {
+  padding: 1rem;
+  background-color: var(--gray-50);
+  border-radius: 0.5rem;
+  border: 1px solid var(--gray-200);
+  transition: all 0.15s ease;
+}
+
+.password-item:hover {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.password-item .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.password-item .service {
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.password-item .actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Search Bar */
+.search-bar {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.search-bar input {
+  padding-left: 2.5rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-400);
+  font-size: 1rem;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--gray-900);
+    color: var(--gray-100);
+  }
+
+  .navbar,
+  .card,
+  .login-box {
+    background-color: var(--gray-800);
+  }
+
+  .card-header {
+    border-color: var(--gray-700);
+  }
+
+  input {
+    background-color: var(--gray-800);
+    border-color: var(--gray-700);
+    color: var(--gray-100);
+  }
+
+  input:focus {
+    border-color: var(--primary);
+  }
+
+  .password-generator,
+  .password-item {
+    background-color: var(--gray-800);
+    border-color: var(--gray-700);
+  }
+
+  .password-item:hover {
+    background-color: var(--gray-700);
+  }
+
+  .icon-button {
+    border-color: var(--gray-700);
+    color: var(--gray-100);
+  }
+
+  .icon-button:hover {
+    background-color: var(--gray-700);
+  }
+
+  .nav-logo h1,
+  .card-header h2,
+  .password-item .service {
+    color: var(--gray-100);
+  }
+
+  .checkbox-label {
+    color: var(--gray-300);
+  }
+}
